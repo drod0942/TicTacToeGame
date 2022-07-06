@@ -24,6 +24,22 @@ body{
     text-align: center;
 }
 
+.controls{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.reset{
+    cursor: pointer;
+}
+
+.status{
+    color: rgb(122, 9, 9);
+}
+
+
 .grid{
     display: grid;
     margin-top: 25px;
@@ -34,8 +50,8 @@ body{
 }
 
 .grid-cell{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     background: rgb(35, 103, 167);
     cursor: pointer;
 }

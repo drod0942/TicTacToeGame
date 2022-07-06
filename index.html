@@ -9,36 +9,46 @@
 </head>
 <body>
 
-    <div class="game-container">
+    <div id="start-screen" style="display: block;">
+        <button onclick="startGame()">Start Game!</button>
+    </div>
+
+        <div class="game-container" id="screen" style="display: none;"> 
+
         <h1 class="title">Tic-Tac-Toe</h1>
 
+        <div class="controls">
+            <div class="status">O is Next</div>
+            <div class="reset">Reset</div>
+        </div>
+
         <div class="grid">
-            <div class="grid-cell">
+            <div class="grid-cell tLeft">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell tMiddle">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell tRight">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell mLeft">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell mMiddle">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell mRight">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell bLeft">
 
             </div>
-            <div class="grid-cell">
+            <div class="grid-cell bMiddle">
 
             </div>
-            <div class="grid-cell">
-                
+            <div class="grid-cell bRight">
+
             </div>
         </div>
     </div>
