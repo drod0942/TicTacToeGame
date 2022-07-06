@@ -39,6 +39,10 @@ body{
     color: rgb(122, 9, 9);
 }
 
+.won::after {
+  color: #79b434;
+}
+
 
 .grid{
     display: grid;

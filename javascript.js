@@ -59,20 +59,44 @@ function checkGame(){
 
   if (tLeft && tLeft === tMiddle && tLeft === tRight) { 
         winner(tLeft);
+        cellDivs[0].classList.add('won');
+        cellDivs[1].classList.add('won');
+        cellDivs[2].classList.add('won');
   } else if (mLeft && mLeft === mMiddle && mLeft === mRight) {
         winner(mLeft);
+        cellDivs[3].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[5].classList.add('won');
   } else if (bLeft && bLeft === bMiddle && bLeft === bRight) {
         winner(bLeft);
+        cellDivs[6].classList.add('won');
+        cellDivs[7].classList.add('won');
+        cellDivs[8].classList.add('won');
   } else if (tLeft && tLeft === mLeft && tLeft === bLeft) {
         winner(tLeft);
+        cellDivs[0].classList.add('won');
+        cellDivs[3].classList.add('won');
+        cellDivs[6].classList.add('won');
   } else if (tMiddle && tMiddle === mMiddle && tMiddle === bMiddle) {
         winner(tMiddle);
+        cellDivs[1].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[7].classList.add('won');
   } else if (tRight && tRight === mRight && tRight === bRight) {
         winner(tRight);
+        cellDivs[2].classList.add('won');
+        cellDivs[5].classList.add('won');
+        cellDivs[8].classList.add('won');
   } else if (tLeft && tLeft === mMiddle && tLeft === bRight) {
         winner(tLeft);
+        cellDivs[0].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[8].classList.add('won');
   } else if (tRight && tRight === mMiddle && tRight === bLeft) {
         winner(tRight);
+        cellDivs[2].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[6].classList.add('won');
   } else if (tLeft && tMiddle && tRight && mLeft && mMiddle && mRight && bLeft && bMiddle && bRight) {
         gameStart = false;
         statusD.innerHTML = 'Game is tied!';
