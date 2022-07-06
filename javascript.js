@@ -20,7 +20,37 @@ function startGame(){
     Init.start();
 }
 
-const statusD = document.querySelector('status');
+//Grabbing all the elements from the HTML to change
+const statusD = document.querySelector('.status');
 const resetD = document.querySelector('.reset');
-const cellD = document.querySelectorAll('.grid-cell');
+const cellDivs = document.querySelectorAll('.grid-cell');
+let gameStart = true;
+let xIsNext = true;
 
+
+//event for when a cell is clicked
+const handleClick = (e) => {
+    const classList = e.target.classList;
+    
+    //Makes sure the same box isnt clicked so it doesnt add two classes
+    if (!gameStart || classList[1] === 'x' || classList[1] === 'o') {
+        return;
+      }
+
+    //makes sure to add a class of x or O when a box is clicked
+
+    if (xIsNext) {
+        classList.add('x');
+      } else {
+        classList.add('o');
+      }
+
+  };
+  
+
+resetD.addEventListener('click', handleR);
+
+
+for (const cellD of cellDivs) {
+    cellD.addEventListener('click', handleClick)
+  }

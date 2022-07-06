@@ -50,10 +50,27 @@ body{
 }
 
 .grid-cell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     height: 150px;
     width: 150px;
     background: rgb(35, 103, 167);
     cursor: pointer;
+}
+.x,
+.o {
+  cursor: default;
+}
+
+.x::after{
+  content: 'x';
+  font-size: 150px;
+}
+
+.o::after{
+  content: 'o';
+  font-size: 150px;
 }
 
 .button-19 {
