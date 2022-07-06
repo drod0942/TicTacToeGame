@@ -19,3 +19,8 @@ let Init = new game();
 function startGame(){
     Init.start();
 }
+
+const statusD = document.querySelector('status');
+const resetD = document.querySelector('.reset');
+const cellD = document.querySelectorAll('.grid-cell');
+
