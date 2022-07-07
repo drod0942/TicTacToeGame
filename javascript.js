@@ -58,7 +58,6 @@ function checkGame(){
     const bMiddle = cellDivs[7].classList[1];
     const bRight = cellDivs[8].classList[1];
 
-
   // check every way they can win, first we check if 
   //they exist and then if they are equal to other combos
 
@@ -138,9 +137,9 @@ function handleR(){
 
 //event for when a cell is clicked
 
-function handleClick(evnt){
+function handleClick(event){
     
-    const classList = evnt.target.classList;
+    const classList = event.target.classList;
 
     //Makes sure the same box isnt clicked so it doesnt add two classes 
     //Also Makes sure that boxes are clickable if the game is done.
