@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +9,8 @@
 body{
     display: flex;
     justify-content: center;
-    color: white;
+    background-image: url("bgimage.jpeg");
+    background-color: rgb(0, 0, 0);
     font-family: Tahoma, sans-serif;
 }
 
@@ -20,9 +23,93 @@ body{
 
 /* MAKE THE LITTERS DROP ANIMATION***************************************** */
 
-.title{
-    text-align: center;
+.animate {
+  font-size: 30px;
+  margin: 20px;
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+
 }
+
+.animate span {
+  display: inline-block;
+}
+.animate span:nth-of-type(2) {
+  animation-delay: .05s;
+}
+.animate span:nth-of-type(3) {
+  animation-delay: .1s;
+}
+.animate span:nth-of-type(4) {
+  animation-delay: .15s;
+}
+.animate span:nth-of-type(5) {
+  animation-delay: .2s;
+}
+.animate span:nth-of-type(6) {
+  animation-delay: .25s;
+}
+.animate span:nth-of-type(7) {
+  animation-delay: .3s;
+}
+.animate span:nth-of-type(8) {
+  animation-delay: .35s;
+}
+.animate span:nth-of-type(9) {
+  animation-delay: .4s;
+}
+.animate span:nth-of-type(10) {
+  animation-delay: .45s;
+}
+.animate span:nth-of-type(11) {
+  animation-delay: .5s;
+}
+.animate span:nth-of-type(12) {
+  animation-delay: .55s;
+}
+.animate span:nth-of-type(13) {
+  animation-delay: .6s;
+}
+.animate span:nth-of-type(14) {
+  animation-delay: .65s;
+}
+.animate span:nth-of-type(15) {
+  animation-delay: .7s;
+}
+.animate span:nth-of-type(16) {
+  animation-delay: .75s;
+}
+.animate span:nth-of-type(17) {
+  animation-delay: .8s;
+}
+.animate span:nth-of-type(18) {
+  animation-delay: .85s;
+}
+.animate span:nth-of-type(19) {
+  animation-delay: .9s;
+}
+.animate span:nth-of-type(20) {
+  animation-delay: .95s;
+}
+
+.six span {
+  color: #490303;
+  opacity: 0;
+  transform: rotate(-180deg) translate(150px, 0);
+  animation: twister .5s forwards;
+}
+
+
+@keyframes twister {
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg) translate(0);
+    opacity: 1;
+  }
+}
+
 
 .controls{
     display: flex;
@@ -33,14 +120,22 @@ body{
 
 .reset{
     cursor: pointer;
+    font-family: 'Black Ops One', cursive;
+
+}
+
+.reset:hover{
+  color: black;
 }
 
 .status{
-    color: rgb(122, 9, 9);
+    color: rgb(255, 255, 255);
+    font-family: 'Black Ops One', cursive;
+
 }
 
 .won::after {
-  color: #79b434;
+  color: #490303;
 }
 
 
@@ -65,16 +160,19 @@ body{
 .x,
 .o {
   cursor: default;
+  font-family: 'Splash', cursive;
 }
 
 .x::after{
   content: 'x';
   font-size: 150px;
+  font-family: 'Splash', cursive;
 }
 
 .o::after{
   content: 'o';
   font-size: 150px;
+  font-family: 'Splash', cursive;
 }
 
 .button-19 {

@@ -1,16 +1,24 @@
+
+//Grabbing all the elements from the HTML to change
+const resetD = document.querySelector('.reset');
+const cellDivs = document.querySelectorAll('.grid-cell');
+const statusD = document.querySelector('.status');
+
+
 class game{
 
     start(){
-        this.toggleScreen('start-screen', false);
-        this.toggleScreen('screen', true);
+        this.openingScreen('start-screen', false);
+        this.openingScreen('screen', true);
 
     }
 
-    toggleScreen(id,toggle) {
+    openingScreen(id,toggle) {
         let element = document.getElementById(id);
         let display = (toggle) ? 'block' : 'none';
         element.style.display = display;
     }
+    
 }
 
 
@@ -20,13 +28,10 @@ function startGame(){
     Init.start();
 }
 
-//Grabbing all the elements from the HTML to change
-const statusD = document.querySelector('.status');
-const resetD = document.querySelector('.reset');
-const cellDivs = document.querySelectorAll('.grid-cell');
+//Beyon here are functions for events when the cells are clicked and when the reset button is pressed
+
 let gameStart = true;
 let xNext = true;
-
 
 //Functions to Update the Game And Check for Winner
 function winner(letter){
@@ -42,7 +47,7 @@ function winner(letter){
 
 
 function checkGame(){
-    //We Want index 2 because we want to know if it is an x, an o, or nothing
+    //We Want index 1 because we want to know if it is an x, an o, or nothing
     const tLeft = cellDivs[0].classList[1];
     const tMiddle = cellDivs[1].classList[1];
     const tRight = cellDivs[2].classList[1];
@@ -77,32 +82,32 @@ function checkGame(){
         cellDivs[0].classList.add('won');
         cellDivs[3].classList.add('won');
         cellDivs[6].classList.add('won');
-  } else if (tMiddle && tMiddle === mMiddle && tMiddle === bMiddle) {
-        winner(tMiddle);
-        cellDivs[1].classList.add('won');
-        cellDivs[4].classList.add('won');
-        cellDivs[7].classList.add('won');
-  } else if (tRight && tRight === mRight && tRight === bRight) {
+  }else if (tRight && tRight === mRight && tRight === bRight) {
         winner(tRight);
         cellDivs[2].classList.add('won');
         cellDivs[5].classList.add('won');
         cellDivs[8].classList.add('won');
-  } else if (tLeft && tLeft === mMiddle && tLeft === bRight) {
-        winner(tLeft);
-        cellDivs[0].classList.add('won');
-        cellDivs[4].classList.add('won');
-        cellDivs[8].classList.add('won');
-  } else if (tRight && tRight === mMiddle && tRight === bLeft) {
+  }  else if (tRight && tRight === mMiddle && tRight === bLeft) {
         winner(tRight);
         cellDivs[2].classList.add('won');
         cellDivs[4].classList.add('won');
         cellDivs[6].classList.add('won');
+    }   else if (tMiddle && tMiddle === mMiddle && tMiddle === bMiddle) {
+        winner(tMiddle);
+        cellDivs[1].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[7].classList.add('won');
+    } else if (tLeft && tLeft === mMiddle && tLeft === bRight) {
+        winner(tLeft);
+        cellDivs[0].classList.add('won');
+        cellDivs[4].classList.add('won');
+        cellDivs[8].classList.add('won');
   } else if (tLeft && tMiddle && tRight && mLeft && mMiddle && mRight && bLeft && bMiddle && bRight) {
         gameStart = false;
         statusD.innerHTML = 'Game is tied!';
   } else {
 
-        xNext = !xNext;
+        xNext = !xNext; //if xNext is true, change it to false, meaning its O's turn
 
         if (xNext) {
             statusD.innerHTML = 'X is next';
@@ -115,7 +120,7 @@ function checkGame(){
 }
 
 
-//event for when reset is clicked
+//event handler for when reset is clicked
 function handleR(){
 
     xNext = true;
@@ -137,14 +142,15 @@ function handleClick(evnt){
     
     const classList = evnt.target.classList;
 
-    //Makes sure the same box isnt clicked so it doesnt add two classes
-    if (!gameStart || classList[1] === 'x' || classList[1] === 'o') {
+    //Makes sure the same box isnt clicked so it doesnt add two classes 
+    //Also Makes sure that boxes are clickable if the game is done.
+    if (classList[1] === 'x' || classList[1] === 'o' || !gameStart) {
         return;
       }
 
     //makes sure to add a class of x or O when a box is clicked
 
-    if (xNext) {
+    if (xNext == true) {
         classList.add('x');
         checkGame();
 

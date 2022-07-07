@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Splash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
+    <embed src="creepyMusic.mp3" loop="true" autostart="true" width="2" height="0">
 
     <div id="start-screen" style="display: block;">
         <button class="button-19" onclick="startGame()">Start Game!</button>
@@ -15,7 +21,9 @@
 
         <div class="game-container" id="screen" style="display: none;"> 
 
-        <h1 class="title">Tic-Tac-Toe</h1>
+        <div class="animate six ">
+            <span>T</span><span>i</span><span>c</span><span>-</span><span>T</span><span>a</span><span>c</span><span>-</span><span>T</span><span>o</span><span>e</span>
+        </div>
 
         <div class="controls">
             <div class="status">X is Next</div>
