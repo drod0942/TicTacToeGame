@@ -118,13 +118,13 @@ function checkGame(){
 
 }
 
-
+  
 //event handler for when reset is clicked
-function handleR(){
+resetD.addEventListener('click', function(){
 
     xNext = true;
     statusD.innerHTML = 'X is next';
-
+  
     for (const cells of cellDivs) {
       cells.classList.remove('x');
       cells.classList.remove('o');
@@ -132,38 +132,34 @@ function handleR(){
     }
     gameStart = true;
 
-}
-
-
-//event for when a cell is clicked
-
-function handleClick(event){
-    
-    const classList = event.target.classList;
-
-    //Makes sure the same box isnt clicked so it doesnt add two classes 
-    //Also Makes sure that boxes are clickable if the game is done.
-    if (classList[1] === 'x' || classList[1] === 'o' || !gameStart) {
-        return;
-      }
-
-    //makes sure to add a class of x or O when a box is clicked
-
-    if (xNext == true) {
-        classList.add('x');
-        checkGame();
-
-      } else {
-        classList.add('o');
-        checkGame();
-      }
-
-  };
-  
-
-resetD.addEventListener('click', handleR);
+});
 
 
 for (const cellD of cellDivs) {
-    cellD.addEventListener('click', handleClick)
+
+    //event for when a cell is clicked
+    cellD.addEventListener('click', function(event){
+
+      const classList = event.target.classList;
+
+      //Makes sure the same box isnt clicked so it doesnt add two classes 
+      //Also Makes sure that boxes are clickable if the game is done.
+      if (classList[1] === 'x' || classList[1] === 'o' || !gameStart) {
+          return;
+        }
+  
+      //makes sure to add a class of x or O when a box is clicked
+  
+      if (xNext == true) {
+          classList.add('x');
+          checkGame();
+  
+        } else {
+          classList.add('o');
+          checkGame();
+        }
+  
+
+    })
+
   }

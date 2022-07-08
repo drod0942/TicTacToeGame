@@ -21,95 +21,6 @@ body{
     border-radius: 25px;
 }
 
-/* MAKE THE LITTERS DROP ANIMATION***************************************** */
-
-.animate {
-  font-size: 30px;
-  margin: 20px;
-  text-align: center;
-  font-family: 'Rock Salt', cursive;
-
-}
-
-.animate span {
-  display: inline-block;
-}
-.animate span:nth-of-type(2) {
-  animation-delay: .05s;
-}
-.animate span:nth-of-type(3) {
-  animation-delay: .1s;
-}
-.animate span:nth-of-type(4) {
-  animation-delay: .15s;
-}
-.animate span:nth-of-type(5) {
-  animation-delay: .2s;
-}
-.animate span:nth-of-type(6) {
-  animation-delay: .25s;
-}
-.animate span:nth-of-type(7) {
-  animation-delay: .3s;
-}
-.animate span:nth-of-type(8) {
-  animation-delay: .35s;
-}
-.animate span:nth-of-type(9) {
-  animation-delay: .4s;
-}
-.animate span:nth-of-type(10) {
-  animation-delay: .45s;
-}
-.animate span:nth-of-type(11) {
-  animation-delay: .5s;
-}
-.animate span:nth-of-type(12) {
-  animation-delay: .55s;
-}
-.animate span:nth-of-type(13) {
-  animation-delay: .6s;
-}
-.animate span:nth-of-type(14) {
-  animation-delay: .65s;
-}
-.animate span:nth-of-type(15) {
-  animation-delay: .7s;
-}
-.animate span:nth-of-type(16) {
-  animation-delay: .75s;
-}
-.animate span:nth-of-type(17) {
-  animation-delay: .8s;
-}
-.animate span:nth-of-type(18) {
-  animation-delay: .85s;
-}
-.animate span:nth-of-type(19) {
-  animation-delay: .9s;
-}
-.animate span:nth-of-type(20) {
-  animation-delay: .95s;
-}
-
-.six span {
-  color: #490303;
-  opacity: 0;
-  transform: rotate(-180deg) translate(150px, 0);
-  animation: twister .5s forwards;
-}
-
-
-@keyframes twister {
-  10% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(0deg) translate(0);
-    opacity: 1;
-  }
-}
-
 
 .controls{
     display: flex;
@@ -157,8 +68,7 @@ body{
     background: rgb(35, 103, 167);
     cursor: pointer;
 }
-.x,
-.o {
+.x, .o {
   cursor: default;
   font-family: 'Splash', cursive;
 }
@@ -175,21 +85,22 @@ body{
   font-family: 'Splash', cursive;
 }
 
-.button-19 {
-  appearance: button;
-  background-color: #1899D6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
+.button {
   display: inline-block;
+  width: 100%;
+  appearance: button;
   font-family: din-round,sans-serif;
+  background-color: #471c1f;
+  color: #FFFFFF;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  cursor: pointer;
   margin: 0;
   margin-top: 20em;
   outline: none;
@@ -204,34 +115,136 @@ body{
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 100%;
 }
 
-.button-19:after {
+.button:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: #7c3c41;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
   bottom: -4px;
   content: "";
-  left: 0;
   position: absolute;
+  left: 0;
   right: 0;
   top: 0;
   z-index: -1;
 }
 
-.button-19:main,
-.button-19:focus {
-  user-select: auto;
-}
-
-.button-19:hover:not(:disabled) {
+.button:hover{
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
 }
 
-.button-19:disabled {
-  cursor: auto;
+
+
+.title {
+  font-size: 30px;
+  margin: 20px;
+  color: #490303;
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .grid {
+    margin-top: 25px;
+    grid-gap: 8px;
+  }
+
+  .grid-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .x::after {
+    font-size: 100px;
+  }
+
+  .o::after {
+    font-size: 100px;
+  }
+
+  .controls{
+    margin: 15px;
+    font-size: 18px;
+}
+
+  .title {
+    font-size: 25px;
+    margin: 15px;
+    text-align: center;
+    font-family: 'Rock Salt', cursive;
+  
+  }
+}
+
+
+@media only screen and (max-width: 440px) {
+
+  .grid {
+    grid-gap: 6px;
+  }
+
+  .grid-cell {
+    height: 85px;
+    width: 80px;
+  }
+
+  .x::after {
+    font-size: 60px;
+  }
+
+  .o::after {
+    font-size: 65px;
+  }
+
+
+  .controls{
+    margin: 10px;
+    font-size: 14px;
+}
+
+  .title {
+    font-size: 21px;
+    margin: 0px;
+  }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+
+  .grid {
+    grid-gap: 5px;
+  }
+
+  .grid-cell {
+    height: 65px;
+    width: 60px;
+  }
+
+  .x::after {
+    font-size: 50px;
+  }
+
+  .o::after {
+    font-size: 55px;
+  }
+
+
+  .controls{
+    margin: 5px;
+    font-size: 12px;
+}
+
+  .title {
+    font-size: 18px;
+    margin: 0px;
+  }
+
 }
