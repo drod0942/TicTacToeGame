@@ -3,7 +3,7 @@
 const resetD = document.querySelector('.reset');
 const cellDivs = document.querySelectorAll('.grid-cell');
 const statusD = document.querySelector('.status');
-
+document.getElementById('sound0').play()
 
 class game{
 
@@ -37,6 +37,7 @@ let xNext = true;
 function winner(letter){
 
     gameStart = false;
+    document.getElementById('sound4').play()
     if (letter === 'x') {
       statusD.innerHTML = `X has won!`;
     } else {
@@ -103,6 +104,7 @@ function checkGame(){
         cellDivs[8].classList.add('won');
   } else if (tLeft && tMiddle && tRight && mLeft && mMiddle && mRight && bLeft && bMiddle && bRight) {
         gameStart = false;
+        document.getElementById('sound5').play()
         statusD.innerHTML = 'Game is tied!';
   } else {
 
@@ -122,6 +124,7 @@ function checkGame(){
 resetD.addEventListener('click', function(){
 
     xNext = true;
+    document.getElementById('sound3').play()
     statusD.innerHTML = 'X is next';
   
     for (const i of cellDivs) {
@@ -150,10 +153,12 @@ for (const cellD of cellDivs) {
   
       if (xNext == true) {
           classList.add('x');
+          document.getElementById('sound2').play()
           checkGame();
   
         } else {
           classList.add('o');
+          document.getElementById('sound2').play()
           checkGame();
         }
   
