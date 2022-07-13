@@ -59,7 +59,7 @@ function checkGame(){
     const bRight = cellDivs[8].classList[1];
 
   // check every way they can win, first we check if 
-  //they exist and then if they are equal to other combos
+  //they exist or if undefined, and then if they are equal to other combos
 
   if (tLeft && tLeft === tMiddle && tLeft === tRight) { 
         winner(tLeft);
@@ -118,17 +118,16 @@ function checkGame(){
 
 }
 
-  
 //event handler for when reset is clicked
 resetD.addEventListener('click', function(){
 
     xNext = true;
     statusD.innerHTML = 'X is next';
   
-    for (const cells of cellDivs) {
-      cells.classList.remove('x');
-      cells.classList.remove('o');
-      cells.classList.remove('won');
+    for (const i of cellDivs) {
+      i.classList.remove('x');
+      i.classList.remove('o');
+      i.classList.remove('won');
     }
     gameStart = true;
 
@@ -141,7 +140,6 @@ for (const cellD of cellDivs) {
     cellD.addEventListener('click', function(event){
 
       const classList = event.target.classList;
-
       //Makes sure the same box isnt clicked so it doesnt add two classes 
       //Also Makes sure that boxes are clickable if the game is done.
       if (classList[1] === 'x' || classList[1] === 'o' || !gameStart) {
